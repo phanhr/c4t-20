@@ -1,24 +1,24 @@
-a=input('username: ')
+name=input('username: ')
 check = True
 while check:
-    b=input('password(co chu,so, lon hon 8 ky tu): ')
-    for i in b:
-        if i.isdigit and i.isalpha and len(b)>8:
+    password=input('password(co chu,so, lon hon 8 ky tu): ')
+    for i in password:
+        if i.isdigit and i.isalpha and len(password)>8:
             check=False
 while True:
-    d=input('nhap lai mat khau: ')
-    if d==b:
+    repass=input('nhap lai mat khau: ')
+    if repass==password:
         print('nhap mat khau thanh cong')
         break
     else:
         print('mat khau khong khop')
 while True:
-    c=input('email: ')
-    if '@gmail.com' in c:
+    Email=input('email: ')
+    if "@" in Email and "." in Email:
         print('Email hop le')
         break
     else:
         print('Email khong hop le')
 
 print('dang ki thanh cong!')
-print(a,b,c)
+print(name,password,Email)

@@ -15,4 +15,4 @@ for i in range(n):
     forward(100)
     right(angle)
 mainloop()
-
+print('hello')

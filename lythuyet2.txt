@@ -1,0 +1,5 @@
+list.index(variable)
+max(list)
+list.sort(): be den lon
+list.sort(reverse = True): lon den be
+git push -u origin master

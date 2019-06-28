@@ -1,9 +1,9 @@
 CMD
-cd: vào
+cd: vï¿½o
 cd.. : ra
 mkdir: t?o folder
-dir: xem có nh?ng folder gì
-rm -rf tenfolder: xóa folder =rmdir TENFOLDER
+dir: xem cï¿½ nh?ng folder gï¿½
+rm -rf tenfolder: xï¿½a folder =rmdir TENFOLDER
 cd / :tr? v? ? C:/
 
 VSCODE

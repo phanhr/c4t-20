@@ -14,5 +14,5 @@ for eachItem in computer.values():
     Sum = Sum + eachItem
 print(Sum)
 buy = input("Enter computer's name and quantity, seperated by ':' : ")
-print(buy.split(":"))
-print("left: ", Sum - int(buy.split[2]))
+print(buy)
+print("left: ", Sum - int(buy.split(" : ")[1]))

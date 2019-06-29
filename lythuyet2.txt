@@ -3,5 +3,6 @@ max(list)
 list.sort(): be den lon
 list.sort(reverse = True): lon den be
 alphabet : list()
+tai youtubedl pip3 install youtube_dl
 
 git push -u origin master

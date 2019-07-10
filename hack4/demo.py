@@ -5,9 +5,6 @@ import os
 
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 check = True
-songList = {
-    "Beautiful Pain - Eminem, Ed Sheeran" : "beautifulpain_eminem.mp3",
-    }
 while check:
     choice = input('''pick one of these options:
     1. Show all songs
@@ -18,11 +15,15 @@ while check:
     Enter: ''')
 
     if choice == "1":
-        if len(songList)==0:
+        import json
+        with open("songList.json", 'r+', encoding='utf8') as json_file:
+            data = json.load(json_file)
+        if len(data)==0:
             print("Song list is empty")
         else:
-            for k,v in enumerate(list(songList.keys())):
-                print(k+1,'.',v)
+            for k,v in enumerate(data):
+                for value in data[k].keys():
+                    print(k+1,'.',value)
     elif choice == "2":
         ydl_opts = {
             'default_search' : "ytsearch5",
@@ -62,15 +63,22 @@ while check:
         
 
     elif choice == "3":
-        for k,v in enumerate(list(songList.keys())):
-            print(k+1,'.',v)
+        import json
+        with open("songList.json", 'r+', encoding='utf8') as json_file:
+            data = json.load(json_file)
+        if len(data)==0:
+            print("Song list is empty")
+        else:
+            for k,v in enumerate(data):
+                for key in data[k].keys():
+                    print(k+1,'.',key)
         name = input("Enter song's position: ")
-        file = list(songList.values())[int(name)-1]
+        fileName = list(data[int(name)-1].values())[0]
         mixer.init()
-        mixer.music.load(file)
+        mixer.music.load(fileName)
         mixer.music.play()
         while True:
-            key = input("pause, play or stop?")
+            key = input("pause, continue or stop?")
             if key == "pause":
                 mixer.music.pause()
             elif key == "continue":
@@ -104,7 +112,15 @@ while check:
         import json
         with open("musicInfo.json", 'w', encoding='utf8') as json_file:
             json.dump(search_results,json_file)
-        songList[search_results["title"]] = videos[videoChoice-1]["id"]+".mp3"
+        import json
+        with open("songList.json", 'r+', encoding='utf8') as json_file:
+            data = json.load(json_file)
+            person={}
+            person[search_results["title"]]=videos[videoChoice-1]["id"]+".mp3"
+            data.append(person)
+            json_file.seek(0)
+            json.dump(data,json_file)
+        print("done")
 
     elif choice == "5":
         key = input("Press any key to exit: ")

@@ -1,0 +1,12 @@
+.rect {
+    width : 300px;
+    height: 200px;
+    background-color:blueviolet;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    background-color: lightpink;
+    border: 1px solid black;
+}

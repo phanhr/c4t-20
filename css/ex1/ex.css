@@ -1,0 +1,15 @@
+.text-salmon {
+    color: salmon;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-karla {
+    font-family: 'Karla', sans-serif;
+}

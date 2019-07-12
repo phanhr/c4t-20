@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color guess</title>
+    <link rel="stylesheet" href="app.css">
+    <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="music">
+        <!-- <iframe src="looppop.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+            </iframe> -->
+        <audio id="player" autoplay loop>
+            <source src="looppop.mp3" type="audio/mp3">
+        </audio>
+        <audio id="true">
+            <source src="true.ogg" type="audio/ogg">
+        </audio>
+        <audio id="false">
+            <source src="false.mp3" type="audio/mp3">
+        </audio>
+        <audio id="bell">
+            <source src="bell.mp3" type="audio/mp3"> 
+        </audio>
+        <button onclick="pause()">pause</button>
+    </div>
+    <div id="root" class="arvo">
+        <div id="score" class="arvo text-uppercase">Score = 0</div>
+        <div>
+            <div id="rgb" class="arvo"></div>
+            <div id="ball_container"> 
+                <div class="ball" index="0" ></div>
+                <div class="ball" index="1"></div>
+                <div class="ball" index="2"></div>
+            </div>
+        </div>
+        <div></div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="app.js"></script>
+        
+</body>
+</html>

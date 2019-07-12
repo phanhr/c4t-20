@@ -1,0 +1,39 @@
+        /* selector {
+            property: value
+        } */
+
+        /* tag name selector */
+        h1 {
+            color:  red;
+        }
+
+        h2 {
+            color : blue;
+        }
+    
+        /* id selector */
+        #heading-2 {
+            color: green;
+            font-family: 'Mountains of Christmas', cursive;
+            font-size: 40px;
+        }
+
+        /* class selector */
+        .text-right {
+            text-align: right;
+        }
+
+        #background-ele {
+            background-color: lightblue;
+            height: 500px;
+            width: 100%;
+            background-image: url("https://cdn.cnn.com/cnnnext/dam/assets/170407220921-07-iconic-mountains-pitons-restricted.jpg");
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .bgr-blue {
+            background-color: lightblue;
+            height: 1000px;
+            width: 100%;
+
+        }

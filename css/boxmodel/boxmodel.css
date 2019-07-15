@@ -1,0 +1,32 @@
+.bg-green {
+    background-color: green;
+}
+
+.bg-yellow {
+    background-color: yellow;
+}
+
+.w-250px {
+    width: 250px;
+}
+
+.w-500px {
+    width: 500px;
+}
+
+.h-200px {
+    height: 200px;
+}
+
+.p-100px {
+    padding: 100px;
+}
+
+.border {
+    border: 1px solid red;
+    border-radius: 10px;
+}
+
+.m-item {
+    margin: 50px;
+}

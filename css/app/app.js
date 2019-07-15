@@ -1,6 +1,6 @@
 var rightIndex;
 var score = 0;
-var timeId;
+
 function generateColors() {
     var r = Math.floor(Math.random() * 255);
     var g = Math.floor(Math.random() *255);
@@ -39,11 +39,10 @@ function generateColors() {
 function eventListen() {
     var ballContainer = document.getElementById("ball_container");
     var balls = ballContainer.getElementsByClassName("ball");
-    timeId = setTimeout(timeOut,3000);
+    
     for (var i = 0; i<balls.length; i++) {
         var ball = balls[i];
-        ballListened = ball.addEventListener("click", function(e) {
-            clearInter();
+        ball.addEventListener("click", function(e) {
             var ballClicked = e.target;
             if (ballClicked.getAttribute("index")==rightIndex) {
                 score ++;
@@ -81,13 +80,31 @@ function bellRing() {
     bellRing.play();
 };
 
-function timeOut() {
-    bellRing();
-    alert("time out");
-};
-
-function clearInter() {
-    clearInterval(timeId);
+function guessColor() {
+    generateColors();
+    eventListen();
 }
+
 generateColors();
-eventListen();
+var totalSeconds;
+var minutesLeft;
+var secondsLeft;
+var ballClicked = $(".ball").click(eventListen());
+function checkTime() {
+    document.getElementById("time-left").innerHTML=`Time left: ${minutesLeft} minute, ${secondsLeft} seconds`;
+    if (totalSeconds<=0) {
+        setTimeout(() => alert("time out"),1000);
+    } else {
+        totalSeconds=totalSeconds-1;
+        minutesLeft=parseInt(totalSeconds/10);
+        secondsLeft=parseInt(totalSeconds%10);
+        setTimeout("checkTime()",1000);
+    }
+};
+function runApp() {
+    totalSeconds = 10;
+    minutesLeft = parseInt(totalSeconds/10)
+    secondsLeft = parseInt(totalSeconds%10);
+    setTimeout("checkTime()",0)
+    };
+setTimeout("runApp()",0)

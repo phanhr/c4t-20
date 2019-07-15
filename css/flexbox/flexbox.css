@@ -1,0 +1,37 @@
+.w-100 {
+    width: 100%;
+}
+
+.w-250px {
+    width: 250px;
+}
+
+.h-200px {
+    height: 200px;
+}
+
+.h-500px {
+    height: 500px;
+}
+
+.bg-gray {
+    background-color: gray;
+}
+
+.bg-green {
+    background-color: green;
+}
+
+
+.m-10px {
+    margin: 10px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+#box-container {
+    flex-flow: row wrap;
+    align-content: center;
+}

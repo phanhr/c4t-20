@@ -2,8 +2,9 @@ from __future__ import unicode_literals
 import youtube_dl
 from pygame import mixer # Load the required library
 import os
-
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
+	
+
 check = True
 while check:
     choice = input('''pick one of these options:
@@ -74,7 +75,7 @@ while check:
                     print(k+1,'.',key)
         name = input("Enter song's position: ")
         fileName = list(data[int(name)-1].values())[0]
-        mixer.init()
+        mixer.init(44100,-16, 300, 1024)
         mixer.music.load(fileName)
         mixer.music.play()
         while True:
